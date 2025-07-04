@@ -1,0 +1,34 @@
+# name: 'Krotppuccin Mocha'
+# preferred_background: 1e1e2e
+
+fish_color_normal cdd6f4  # base
+
+fish_color_command 89b4fa --bold  # blue
+fish_color_keyword cba6f7 --bold  # mauve
+fish_color_error f38ba8  # red
+
+fish_color_param cdd6f4   # base
+fish_color_option f5c2e7  # pink
+
+fish_color_quote f2cdcd   # flamingo
+fish_color_escape 94e2d5  # teal
+
+fish_color_valid_path 74c7ec --underline  # sapphire
+
+# maybe operators should be pinkish instead of blue?
+fish_color_operator 89dceb     # sky
+fish_color_end b4befe          # lavender
+fish_color_redirection 89dceb  # sky
+
+fish_color_comment a6adc8 --italics  # subtext0
+fish_color_autosuggestion 6c7086     # 6c7086
+
+fish_color_selection    --background=313244  # surface0
+fish_color_search_match --background=313244  # surface0
+
+
+# no idea what this does but I left it here from the official catppuccin mocha theme
+fish_pager_color_progress 6c7086     # overlay0
+fish_pager_color_prefix f5c2e7       # pink
+fish_pager_color_completion cdd6f4   # text
+fish_pager_color_description 6c7086  # overlay0
