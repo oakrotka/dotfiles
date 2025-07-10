@@ -26,6 +26,8 @@ fish_color_autosuggestion 6c7086     # 6c7086
 fish_color_selection    --background=313244  # surface0
 fish_color_search_match --background=313244  # surface0
 
+fish_color_user 74c7ec  # sapphire - maybe change to match commands?
+fish_color_cwd f5c2e7  # pink
 
 # no idea what this does but I left it here from the official catppuccin mocha theme
 fish_pager_color_progress 6c7086     # overlay0

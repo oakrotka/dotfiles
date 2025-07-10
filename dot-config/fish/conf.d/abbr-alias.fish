@@ -3,6 +3,7 @@ if status is-interactive
   abbr --add ccp wl-copy
   abbr --add cpst wl-paste
   abbr --add pacs sudo pacman
+  abbr --add pacwhich pacman -Qo
   abbr --add watch mpv --fs
   # abbreviations I use less often
   abbr --add android aft-mtp-cli

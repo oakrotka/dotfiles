@@ -15,9 +15,13 @@ return {
 
   {
     'chomosuke/typst-preview.nvim',
-    --TODO: add the typst filetype
     ft = 'typst',
     version = '1.*',
-    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+    opts = {
+      dependencies_bin = {
+        ['tinymist'] = '/usr/bin/tinymist',
+        ['websocat'] = '/usr/bin/websocat'
+      },
+    },
   },
 }
