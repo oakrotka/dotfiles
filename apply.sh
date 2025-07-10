@@ -40,4 +40,6 @@ try_installfile() {
   fi
 }
 
+./typst-install.sh ./typst/krommon "0.1.0"
+
 installdir $HOME/.config ./dot-config/fish ./dot-config/nvim ./dot-config/pythonrc
