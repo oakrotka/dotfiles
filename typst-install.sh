@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 # usage: ./typst-install.sh PACKAGE VERSION
 #
 # this script installs a typst package locally on your computer,

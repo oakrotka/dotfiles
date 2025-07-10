@@ -1,4 +1,3 @@
-
 #let defaults(
   fancy-font: true,
   highlight-refs: false,
@@ -8,7 +7,8 @@
   set text(lang: "pl")
   
   set text(font: "TeX Gyre Schola") if fancy-font
-  // the rendering of this font is sometimes weird, so I may consider changing it in the future
+  // the rendering of this font is sometimes weird (particularily on firefox + linux),
+  // so I may consider changing it in the future
   show math.equation: set text(font: "TeX Gyre Schola Math") if fancy-font
   show raw: set text(font: "JetBrains Mono NL", size: 1.05em) if fancy-font
 
@@ -32,4 +32,3 @@
 #import "@preview/oxifmt:1.0.0": strfmt 
 // prettily show a number with a certain precision in a scientific form
 #let scient(f, prec: 3) = strfmt("{:." + str(prec) + "e}", f)
-
