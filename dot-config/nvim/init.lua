@@ -3,6 +3,3 @@ require "options"
 
 -- Load plugins
 require "setup.lazy"
-
--- Post plugin loading config
-require "theme"

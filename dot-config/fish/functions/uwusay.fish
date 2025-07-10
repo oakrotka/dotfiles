@@ -1,6 +1,6 @@
 function uwusay --description "uwu cowsay"
   # a potetial improvement is to allow the user to pass options into cowsay,
-  # but this will overwrite uwurandom's output with a simple implementation and invalid user input
+  # but with a simple implementation and invalid user input this will overwrite uwurandom's output 
   argparse --max-args=0 'c/bytes=?!_validate_int --min 0' -- $argv
     or return
 
