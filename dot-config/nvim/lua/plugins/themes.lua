@@ -6,6 +6,7 @@ return {
     -- structure to rely on nvchad's)
     'catppuccin/nvim',
     name = 'catppuccin',
+    version = '*',
 
     -- this is the main theme
     lazy = false,

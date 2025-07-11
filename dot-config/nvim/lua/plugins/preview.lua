@@ -2,7 +2,7 @@
 return {
   {
     "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
     -- this version of the config requires yarn,
     -- but if I were to ever uninstall it then it is also possible 
     -- to download a binary release
@@ -10,14 +10,14 @@ return {
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
-    ft = { "markdown" },
   },
 
   {
     'chomosuke/typst-preview.nvim',
-    ft = 'typst',
-    version = '1.*',
+    cmd = {"TypstPreview", "TypstPreviewToggle", "TypstPreviewStop", "TypstPreviewUpdate"},
+    version = '*',
     opts = {
+      -- assumes these binaries to be installed there
       dependencies_bin = {
         ['tinymist'] = '/usr/bin/tinymist',
         ['websocat'] = '/usr/bin/websocat'
