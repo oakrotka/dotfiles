@@ -53,7 +53,7 @@ Przy domyślnych ustawieniach zachodzą poniższe zasady:
 Gdy użyta jest flaga `highlight-refs`, następujące zasady zachodzą:
 - referencje używają formatowania dla linków - @testgrid
 - #link(<testgrid>)[linki wewntęrzne] używają formatowania dla linków
-- #link("linki-zewnetrzne.pl") używają formatowania dla linków
+- #link("https://linki-zewnetrzne.pl") używają formatowania dla linków
 
 // sadly you cannot override previous show rules so the links are still blue and underlined here
 #show: defaults.with(link-highlighter: emph, highlight-refs: true)
@@ -61,5 +61,5 @@ Gdy użyta jest flaga `highlight-refs`, następujące zasady zachodzą:
 Gdy zmieniona jest wartość `link-highlighter` na funkcję do formatowania linków:
 - referencje korzystają z niej, jeśli `highlight-refs` jest ustawione - @testgrid
 - #link(<testgrid>)[linki wewntęrzne] korzystają z niej
-- #link("linki-zewnetrzne.pl") korzystają z niej
+- #link("https://linki-zewnetrzne.pl") korzystają z niej
 

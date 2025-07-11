@@ -1,6 +1,9 @@
 -- themes
 return {
   {
+    -- TODO: this plugin's defaults are lame, change them to match nvchad's base46 plugin
+    -- or change to the base46 plugin enitrely (if it's possible without forcing the directory
+    -- structure to rely on nvchad's)
     'catppuccin/nvim',
     name = 'catppuccin',
 

@@ -27,7 +27,7 @@ target="$target_parent/$version"
 if [ ! -d $target_parent ]; then
   mkdir -p $target_parent
   if [ $? -ne 0 ]; then
-    echo "Error: Failed to create directory $targetdir_parent" 1>&2
+    echo "Error: Failed to create directory $target_parent" 1>&2
     exit 3
   fi
 fi
