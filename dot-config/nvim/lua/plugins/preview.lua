@@ -2,16 +2,13 @@
 return {
   {
     "iamcco/markdown-preview.nvim",
-    cmd = {"MarkdownPreviewToggle", "MarkdownPreview"},
-    -- FIXME: cmd lazyloading doesn't work, this plugin has to be preloaded upon entering the file
-    -- because for some reason lazy.nvim cannot detect the command otherwise
     ft = "markdown",
     -- this version of the config requires yarn,
     -- but if I were to ever uninstall it then it is also possible 
     -- to download a binary release
     build = "cd app && yarn install",
     init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
+      vim.g.mkdp_auto_close = 0
     end,
   },
 

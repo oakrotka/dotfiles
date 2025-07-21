@@ -18,7 +18,7 @@ return {
     build = ':TSUpdate',
 
     opts = {
-      ensure_installed = {'bash', 'fish', 'python', 'vim', 'vimdoc'},
+      ensure_installed = {'bash', 'fish', 'markdown', 'python', 'vim', 'vimdoc'},
       highlight = {
         enable = true,
       },
