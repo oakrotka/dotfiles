@@ -22,3 +22,4 @@ TODO:
 - mpv
 - tofi
 - satty
+- lf

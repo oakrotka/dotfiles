@@ -1,9 +1,13 @@
+-- load custom lsp configurations
+require "lspconfig"
+
+-- enable lsp servers (usually defined by nvim-lspconfig plugin)
 vim.lsp.enable {
-  -- "basedpyright",
+  -- "basedpyright",  -- complains too much
   "clangd",
   "gleam",
   "lua_ls",
   "ocamllsp",
-  "rust-analyzer", -- consider switching to rustaceanvim for more features
+  "rust_analyzer",  -- consider switching to rustaceanvim for more features
   "tinymist",
 }
