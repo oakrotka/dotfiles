@@ -1,5 +1,6 @@
 #!/bin/sh
-# creates a symbolic link at every appropriate location for every dotfile in the repo.
+# installs every file in the user's system,
+# usually by creating a symbolic link at every appropriate location for every dotfile in the repo.
 # may overwrite symbolic links at target destinations
 
 installdir() {
@@ -40,6 +41,11 @@ try_installfile() {
   fi
 }
 
-./typst-install.sh ./typst/krommon "0.1.0"
+# local typst libraries
+./typst/typst-install.sh ./typst/krommon "0.1.0"
 
-installdir $HOME/.config ./dot-config/fish ./dot-config/nvim ./dot-config/pythonrc
+# dotfiles
+installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc
+
+[ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
+installdir $HOME/.local/bin ./local/bin/screenshot-opt
