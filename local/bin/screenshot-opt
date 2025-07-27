@@ -2,6 +2,7 @@
 # USAGE: screenshot-opt [REGION]
 # takes a screenshot on wayland and optimises it for size.
 # if REGION is not provided, screenshot the whole screen.
+# if REGION is -, read the image from stdin.
 # typically to be used with slurp.
 script_name=screenshot-opt
 
@@ -19,6 +20,9 @@ unopt_file=$(mktemp)
 if [ $# -eq 0 ]; then
   # full screen
   grim -l 1 $unopt_file
+elif [ "$*" = '-' ]; then
+  # read screenshot from stdin
+  cp /dev/stdin $unopt_file
 else
   # selected region
   grim -l 1 -g "$*" $unopt_file
@@ -30,16 +34,20 @@ fi
 cat $unopt_file 2>/dev/null | wl-copy &
 unopt_copy_pid=$!
 
+# optimize_fail STATUS REASON 
+optimize_fail () {
+  notify-send 'Optimisation failed' "$2"
+  echo "Error: $2. The copied screenshot is unoptimized." 1>&2
+  exit $1
+}
+
 # check if the user has optipng installed
-if ! which optipng > /dev/null; then
-  notify-send 'Optimisation failed' 'optipng is not installed on your system'
-  echo "Error: Optipng not found. The copied screenshot is unoptimized." 1>&2
-  exit 2
-fi
+which optipng >/dev/null || optimize_fail 2 'optipng is not installed on your system'
 
 # optimises the screenshot for size
 opt_file=$(mktemp)
 optipng -clobber -out $opt_file $unopt_file
+[ $? -eq 0 ] || optimize_fail 3 'optipng exited with a nonzero status'
 
 # kill the previous copy command to prevent a theoretical situation where the it copies
 # the unoptimized file after the optimized one and the unoptimized one ends up in clipboard
