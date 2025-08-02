@@ -28,12 +28,12 @@ try_installfile() {
     exit 2
   fi
 
-  if [ -e $target -a ! -L $target ]; then  # test for presence of a file that is not a symlink
-    echo "Warning: File $filename already exists at $targetdir, skipping." 1>&2
+  if [ -e $target ] && [ ! -L $target ]; then  # test for presence of a file that is not a symlink
+    echo "Skipping $filename, as it already exists at $targetdir." 1>&2
   else
     if [ -L $target ]; then
       # this is useful when moving this directory and having to relink every file
-      echo "Warning: Symbolic link $filename already exists at $targetdir, overwriting." 1>&2
+      echo "Overwriting $filename at $targetdir, as the symlink already exists." 1>&2
       rm $target
     fi
 
@@ -48,4 +48,4 @@ try_installfile() {
 installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc
 
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot-opt
+installdir $HOME/.local/bin ./local/bin/screenshot-opt ./local/bin/pacdeps

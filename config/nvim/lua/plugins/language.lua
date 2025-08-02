@@ -42,7 +42,7 @@ return {
     -- https://github.com/rust-lang/rust/issues/44839
     -- https://github.com/rust-lang/rust/issues/63292
     --
-    -- build = "cargo build --release",  -- uncomment this
+    -- build = "RUSTFLAGS=\"-C target-cpu=native\" cargo build --release",  -- uncomment this
 
     opts = {
       -- minor TODO: make the theme prettier

@@ -33,7 +33,7 @@ if [ ! -d $target_parent ]; then
 fi
 
 if [ -e $target ]; then
-  echo "Warning: File $target already exists, overwriting." 1>&2
+  echo "Overwriting $filename at $target_parent, as it already exists." 1>&2
   rm -r $target
 
   if [ $? -ne 0 ]; then

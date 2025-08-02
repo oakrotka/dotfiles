@@ -1,10 +1,17 @@
 #!/bin/sh
 # USAGE: screenshot-opt [REGION]
-# takes a screenshot on wayland and optimises it for size.
+# takes a screenshot on wayland and optimizes it for size.
 # if REGION is not provided, screenshot the whole screen.
 # if REGION is -, read the image from stdin.
 # typically to be used with slurp.
 script_name=screenshot-opt
+
+# wayland display is required to copy the screenshot
+if [ ! "$WAYLAND_DISPLAY" ]; then
+  notify-send 'Screenshotting failed' 'Could not find wayland display'
+  echo 'Error: Could not find wayland display.' 1>&2
+  exit 4
+fi
 
 # to prevent cpu spikes when, for example, spamming print screens for whatever reason,
 # kill all other instances of this script
@@ -16,7 +23,7 @@ fi
 unopt_file=$(mktemp)
 
 # take the initial screenshot
-# we use minimal compression here, as we're going to better optimise the file anyways
+# we use minimal compression here, as we're going to better optimize the file anyways
 if [ $# -eq 0 ]; then
   # full screen
   grim -l 1 $unopt_file
@@ -27,11 +34,10 @@ else
   # selected region
   grim -l 1 -g "$*" $unopt_file
 fi
-# exit on grim error
 [ $? -eq 0 ] || exit 1
 
 # optipng can take some time, so we'll asynchronously copy this result for now
-cat $unopt_file 2>/dev/null | wl-copy &
+(cat $unopt_file 2>/dev/null | wl-copy) &
 unopt_copy_pid=$!
 
 # optimize_fail STATUS REASON 
@@ -41,10 +47,9 @@ optimize_fail () {
   exit $1
 }
 
-# check if the user has optipng installed
-which optipng >/dev/null || optimize_fail 2 'optipng is not installed on your system'
+type optipng &>/dev/null || optimize_fail 2 'optipng is not installed on your system'
 
-# optimises the screenshot for size
+# optimizes the screenshot for size
 opt_file=$(mktemp)
 optipng -clobber -out $opt_file $unopt_file
 [ $? -eq 0 ] || optimize_fail 3 'optipng exited with a nonzero status'
@@ -53,9 +58,7 @@ optipng -clobber -out $opt_file $unopt_file
 # the unoptimized file after the optimized one and the unoptimized one ends up in clipboard
 kill $unopt_copy_pid 2>/dev/null
 
-# copying the result to clipboard
 cat $opt_file | wl-copy
 
-# cleanup
-notify-send --urgency=low 'Screenshot complete' 'Optimised screenshot copied to clipboard'
+notify-send --urgency=low 'Screenshot complete' 'Optimized screenshot copied to clipboard'
 rm $unopt_file $opt_file

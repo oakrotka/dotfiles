@@ -1,0 +1,12 @@
+#!/bin/sh
+package_name_pattern='[a-z0-9@_+][a-z0-9@._+-]*'
+
+for package in $(
+  if [ "$*" = '-' ]; then
+    cat -
+  else
+    echo $*
+  fi
+); do
+  pactree $package | tail -n+2
+done | rg "($package_name_pattern).*" -or '$1' | sort | uniq
