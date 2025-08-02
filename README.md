@@ -48,5 +48,5 @@ as for the other dependencies:
 - [ ] waybar
 - [ ] mpv
 - [ ] tofi
-- [ ] satty
+- [x] satty
 - [ ] lf

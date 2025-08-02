@@ -1,4 +1,6 @@
 #!/bin/sh
+# print all direct and indirect dependencies of pacman packages
+
 package_name_pattern='[a-z0-9@_+][a-z0-9@._+-]*'
 
 for package in $(

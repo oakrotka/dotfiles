@@ -1,0 +1,23 @@
+[general]
+fullscreen = true
+output-filename = "/home/rodia/.cache/satty/screenshots/test-%Y-%m-%d_%H:%M:%S.png"
+early-exit = true
+corner-roundness = 0
+initial-tool = "crop"
+copy-command = "screenshot-opt -"
+# default-fill-shapes = false
+
+[font]
+family = "Noto"
+style = "Bold"
+
+[color-palette]
+palette = [
+  "#FF4971",
+  "#556FFF",
+  "#B043D1",
+  "#FF8037",
+  "#18E3C8",
+  "#FDFDFD",
+  "#1D1F28",
+]
