@@ -17,7 +17,7 @@ fi
 # kill all other instances of this script
 if [ "$(basename $0)" = $script_name ]; then
   tokill=$(pidof -x $0 -o $$)
-  [ -n "$tokill" ] && kill $tokill
+  [ $? = 0 ]  && kill $tokill
 fi
 
 unopt_file=$(mktemp)
@@ -47,7 +47,7 @@ optimize_fail () {
   exit $1
 }
 
-type optipng &>/dev/null || optimize_fail 2 'optipng is not installed on your system'
+hash optipng &>/dev/null || optimize_fail 2 'optipng is not installed on your system'
 
 # optimizes the screenshot for size
 opt_file=$(mktemp)

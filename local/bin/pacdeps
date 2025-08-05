@@ -10,5 +10,5 @@ for package in $(
     echo $*
   fi
 ); do
-  pactree $package | tail -n+2
-done | rg "($package_name_pattern).*" -or '$1' | sort | uniq
+  pactree -u $package | tail -n+2
+done | rg "^($package_name_pattern).*" -or '$1' | sort | uniq

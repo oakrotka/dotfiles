@@ -14,8 +14,10 @@ lua-language-server
 mpv
 neovim
 opam
+optipng
 pacman-contrib
 poppler
+procps-ng
 python
 ripgrep
 rsync
