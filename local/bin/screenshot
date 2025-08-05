@@ -1,10 +1,10 @@
 #!/bin/sh
-# USAGE: screenshot-opt [REGION]
+# USAGE: screenshot [REGION]
 # takes a screenshot on wayland and optimizes it for size.
 # if REGION is not provided, screenshot the whole screen.
 # if REGION is -, read the image from stdin.
 # typically to be used with slurp.
-script_name=screenshot-opt
+script_name=screenshot
 
 # wayland display is required to copy the screenshot
 if [ ! "$WAYLAND_DISPLAY" ]; then

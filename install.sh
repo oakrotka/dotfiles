@@ -41,11 +41,14 @@ try_installfile() {
   fi
 }
 
-# local typst libraries
+echo 'INSTALLING LOCAL TYPST LIBRARIES'
 ./typst/typst-install.sh ./typst/krommon "0.1.0"
 
-# dotfiles
+echo
+echo 'INSTALLING CONFIGURATIONS TO ~/.config'
 installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/satty
 
+echo
+echo 'INSTALLING SCRIPTS TO ~/.local/bin'
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot-opt ./local/bin/pacdeps
+installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/pacdeps

@@ -4,7 +4,7 @@ output-filename = "/home/rodia/.cache/satty/screenshots/test-%Y-%m-%d_%H:%M:%S.p
 early-exit = true
 corner-roundness = 0
 initial-tool = "crop"
-copy-command = "screenshot-opt -"
+copy-command = "screenshot -"
 # default-fill-shapes = false
 
 [font]
