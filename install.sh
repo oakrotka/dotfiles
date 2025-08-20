@@ -23,32 +23,33 @@ try_installfile() {
   targetdir=$(realpath $2)
   target="$targetdir/$filename"
 
-  if [ ! -d $targetdir ]; then
+  if [ ! -d "$targetdir" ]; then
     echo "Error: Target $targetdir is not a directory" 1>&2
     exit 2
   fi
 
-  if [ -e $target ] && [ ! -L $target ]; then  # test for presence of a file that is not a symlink
-    echo "Skipping $filename, as it already exists at $targetdir." 1>&2
-  else
-    if [ -L $target ]; then
-      # this is useful when moving this directory and having to relink every file
-      echo "Overwriting $filename at $targetdir, as the symlink already exists." 1>&2
-      rm $target
-    fi
-
-    ln -s $filepath $target
+  # test for presence of a non-symlink file
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "$1: skipping, as a file already exists at $targetdir." 1>&2
+    return
   fi
+
+  # if the file at the destination is a symlink, decide whether to overwrite it
+  if [ -L "$target" ]; then
+    if [ "$(readlink -f $target)" = "$filepath" ]; then
+      return
+    else
+      echo "$1: overwriting symlink at $target" 1>&2
+    fi
+  fi
+
+  ln -sf $filepath $target
 }
 
-echo 'INSTALLING LOCAL TYPST LIBRARIES'
 ./typst/typst-install.sh ./typst/krommon "0.1.0"
 
-echo
-echo 'INSTALLING CONFIGURATIONS TO ~/.config'
 installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/satty
 
-echo
-echo 'INSTALLING SCRIPTS TO ~/.local/bin'
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/pacdeps
+installdir $HOME/.local/bin ./local/bin/screenshot 
+installdir $HOME/.local/bin ./local/bin/pacdeps ./local/bin/:3 ./local/bin/checkwindow

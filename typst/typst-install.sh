@@ -16,7 +16,7 @@ filename=$(basename $1)
 filepath=$(realpath $1)
 version=$2
 
-if [ ! -d $filepath ]; then
+if [ ! -d "$filepath" ]; then
   echo "Error: $1 should be a directory." 1>&2
   exit 2
 fi
@@ -24,7 +24,7 @@ fi
 target_parent="$HOME/.local/share/typst/packages/local/$filename"
 target="$target_parent/$version"
 
-if [ ! -d $target_parent ]; then
+if [ ! -d "$target_parent" ]; then
   mkdir -p $target_parent
   if [ $? -ne 0 ]; then
     echo "Error: Failed to create directory $target_parent" 1>&2
@@ -32,8 +32,8 @@ if [ ! -d $target_parent ]; then
   fi
 fi
 
-if [ -e $target ]; then
-  echo "Overwriting $filename at $target_parent, as it already exists." 1>&2
+if [ -e "$target" ]; then
+  echo "$1: overwriting $target" 1>&2
   rm -r $target
 
   if [ $? -ne 0 ]; then
@@ -53,4 +53,4 @@ name = \"$filename\"\n
 version = \"$version\"\n
 entrypoint = \"lib.typ\"\n
 """
-[ -f $manifest_path ] || echo $manifest >> $manifest_path
+[ -f "$manifest_path" ] || echo $manifest >> $manifest_path
