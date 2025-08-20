@@ -1,9 +1,14 @@
+-- option to disable language servers e.g. when they use too much memory
+if vim.env.NVIM_NOLSP ~= nil then
+  return
+end
+
 -- load custom lsp configurations
 require "lspconfig"
 
 -- enable lsp servers (usually defined by nvim-lspconfig plugin)
 vim.lsp.enable {
-  -- "basedpyright",  -- complains too much
+  "basedpyright",
   "clangd",
   "gleam",
   "julials",
