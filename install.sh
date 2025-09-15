@@ -51,4 +51,4 @@ installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/
 echo
 echo 'INSTALLING SCRIPTS TO ~/.local/bin'
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/pacdeps
+installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/pacdeps ./local/bin/strip-prefix

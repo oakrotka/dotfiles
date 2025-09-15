@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# USAGE: strip-prefix FILES
+# strips the common prefix from the base names of provided files
+
+PREFIX_NOT_FOUND_ERR = 1
+FILE_NOT_FOUND_ERR = 2
+FULL_TRUNCATION_ERR = 3
+WOULD_OVERWRITE_ERR = 4
+
+import sys, os
+
+if len(sys.argv) < 3:
+    print(f"Error: expected at least 2 arguments.", file=sys.stderr)
+    exit(PREFIX_NOT_FOUND_ERR)
+
+files = sys.argv[1:]
+for filename in (f for f in files if not os.path.exists(f)):
+    print(f"Error: file {filename} doesn't exist.", file=sys.stderr)
+    exit(FILE_NOT_FOUND_ERR)
+
+# parsed input files
+reldirnames = list(map(os.path.dirname, files))
+absdirnames = list(map(os.path.dirname, map(os.path.abspath, files)))
+basenames = list(map(os.path.basename, files))
+
+pref_len = len(os.path.commonprefix(basenames))
+
+if pref_len == 0:
+    print("Files have different prefixes.", file=sys.stderr)
+    exit(PREFIX_NOT_FOUND_ERR)
+
+print(f"Found prefix: {basenames[0][:pref_len]}\n")
+
+def prepend_dir(dir, name):
+    return os.path.normpath(f"{dir}{'/' * bool(dir)}{name}")
+
+if pref_len in map(len, basenames):
+    idx = map(len, basenames).index(pref_len)
+    fname = prepend_dir(reldirnames[idx], basenames[idx])
+    print(
+        f"Error: name of file {fname} is the same as the prefix "
+         "and would be fully truncated.",
+        file=sys.stderr
+    )
+    exit(FULL_TRUNCATION_ERR)
+
+# truncated names
+relnames_trunc = [prepend_dir(dir, f[pref_len:]) for dir, f in zip(reldirnames, basenames)]
+absnames_trunc = list(map(os.path.abspath, relnames_trunc))
+
+fileset = set(map(os.path.abspath, files))
+for reltrunc, abstrunc, f in zip(relnames_trunc, absnames_trunc, files):
+    if os.path.exists(abstrunc) and abstrunc not in fileset:
+        print(
+            f"Error: stripping the prefix would make file {f} overwrite file {reltrunc}",
+            file=sys.stderr
+        )
+        exit(WOULD_OVERWRITE_ERR)
+
+# going from shortest filenames to longest allows us to avoid overwriting files passed as arguments
+for src, dst in sorted(zip(files, relnames_trunc), key=lambda t: len(t[0])):
+    print(f"{src} -> {dst}")
+    os.rename(src, dst)
