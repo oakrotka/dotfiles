@@ -22,7 +22,7 @@ function sedrename --description 'rename files according to a sed regex pattern'
       or set -f mv_failure
   end
 
-  if set -q _flag_move
+  if not set -q _flag_move
     printf "\nWarning: --move has not been specified, no renaming was performed."
     return 3
   end
