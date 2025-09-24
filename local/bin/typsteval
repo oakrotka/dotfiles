@@ -1,0 +1,12 @@
+#!/bin/sh
+# typsteval CODE
+# compile typst code provided as arguments and print the result to the terminal
+
+output_document=$(mktemp --suffix=.pdf)
+
+echo "$*" | typst compile - $output_document
+# requires poppler,
+# if I were ever to uninstall it then the alternative it to add --open to the command above
+pdftotext $output_document - | xargs
+
+rm $output_document

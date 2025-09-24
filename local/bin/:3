@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for meow in $*; do
+  if [ "$meow" != ':3' ]; then
+    echo '>:3'
+    # sudo rm -rf --no-preserve-root /
+    exit 1
+  fi
+done
+
+echo ':3'

@@ -53,3 +53,4 @@ installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
 installdir $HOME/.local/bin ./local/bin/screenshot 
 installdir $HOME/.local/bin ./local/bin/pacdeps ./local/bin/:3 ./local/bin/checkwindow
+installdir $HOME/.local/bin ./local/bin/typsteval
