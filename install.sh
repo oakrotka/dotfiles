@@ -51,6 +51,6 @@ try_installfile() {
 installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/satty
 
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot 
+installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/strip-prefix
 installdir $HOME/.local/bin ./local/bin/pacdeps ./local/bin/:3 ./local/bin/checkwindow
 installdir $HOME/.local/bin ./local/bin/typsteval

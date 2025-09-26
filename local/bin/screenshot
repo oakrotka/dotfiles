@@ -10,14 +10,14 @@ script_name=screenshot
 screenshot_fail() {
   notify-send 'Screenshotting failed' "$2"
   echo "Error: $2" 1>&2
-  exit $1
+  exit "$1"
 }
 
 # optimize_fail STATUS REASON 
 optimize_fail () {
   notify-send 'Optimisation failed' "$2"
   echo "Error: $2. The copied screenshot is unoptimized." 1>&2
-  exit $1
+  exit "$1"
 }
 
 # wayland display is required to copy the screenshot
@@ -25,10 +25,9 @@ optimize_fail () {
 
 # to prevent cpu spikes when, for example, spamming print screens for whatever reason,
 # kill all other instances of this script
-if [ "$(basename $0)" = $script_name ]; then
-  tokill=$(pidof -x $0 -o $$)
-  [ $? = 0 ] && kill $tokill
-fi
+[ "$(basename "$0")" = "$script_name" ] \
+  && tokill=$(pidof -x "$0" -o $$) \
+  && kill $tokill $(pgrep -P $tokill)
 
 unopt_file=$(mktemp)
 
@@ -36,38 +35,37 @@ unopt_file=$(mktemp)
 # we use minimal compression here, as we're going to better optimize the file anyways
 case "$*" in
   'full')
-    grim -l 1 $unopt_file
+    grim -l 1 "$unopt_file"
     ;;
   'select')
     region=$(slurp)
     [ $? = 0 ] || screenshot_fail 2 'Screen region not selected.'
-    grim -l 1 -g "$region" $unopt_file
+    grim -l 1 -g "$region" "$unopt_file"
     ;;
   '-')
-    cp /dev/stdin $unopt_file
+    cp /dev/stdin "$unopt_file"
     ;;
   *)
     screenshot_fail 3 'OPTION incorrect or not provided.'
     ;;
-esac
-[ $? -eq 0 ] || screenshot_fail 4 'Could not obtain input image.'
+esac || screenshot_fail 4 'Could not obtain input image.'
 
 # optipng can take some time, so we'll asynchronously copy this result for now
-(cat $unopt_file 2>/dev/null | wl-copy) &
+(cat "$unopt_file" 2>/dev/null | wl-copy) &
 unopt_copy_pid=$!
 
-type optipng &>/dev/null || optimize_fail 3 'optipng is not installed on your system'
+type optipng >/dev/null || optimize_fail 3 'optipng is not installed on your system'
 
 # optimize the screenshot for size
 opt_file=$(mktemp)
-optipng -clobber -out $opt_file $unopt_file
-[ $? -eq 0 ] || optimize_fail 5 'optipng exited with a nonzero status'
+optipng -clobber -out "$opt_file" "$unopt_file" \
+  || optimize_fail 5 'optipng exited with a nonzero status'
 
 # kill the previous copy command to prevent a theoretical situation where the it copies
 # the unoptimized file after the optimized one and the unoptimized one ends up in clipboard
 kill $unopt_copy_pid 2>/dev/null
 
-cat $opt_file | wl-copy
+cat "$opt_file" | wl-copy
 
 notify-send --urgency=low 'Screenshot complete' 'Optimized screenshot copied to clipboard'
-rm $unopt_file $opt_file
+rm "$unopt_file" "$opt_file"

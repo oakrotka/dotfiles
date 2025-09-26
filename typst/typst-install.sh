@@ -47,10 +47,9 @@ cp -r $filepath $target
 # I generate the manifest here instead of writing it directly
 # for easier versioning management
 manifest_path="$target/typst.toml"
-manifest="""
-[package]\n
-name = \"$filename\"\n
-version = \"$version\"\n
-entrypoint = \"lib.typ\"\n
+manifest="""[package]
+name = \"$filename\"
+version = \"$version\"
+entrypoint = \"lib.typ\"
 """
-[ -f "$manifest_path" ] || echo $manifest >> $manifest_path
+[ -f $manifest_path ] || printf "$manifest" >> $manifest_path

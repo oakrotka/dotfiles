@@ -7,8 +7,8 @@ for package in $(
   if [ "$*" = '-' ]; then
     cat -
   else
-    echo $*
+    echo "$@"
   fi
 ); do
-  pactree -u $package | tail -n+2
+  pactree -u "$package" | tail -n+2
 done | rg "^($package_name_pattern).*" -or '$1' | sort | uniq

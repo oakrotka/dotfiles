@@ -29,7 +29,7 @@ cat arch-dependencies.txt | sudo pacman -Syu --needed -
 
 as for the other dependencies:
 - packages in the AUR:
-  - `pfetch-rs` is in the AUR (you can use just pfetch instead)
+  - `pfetch-rs` (you can use just pfetch instead)
   - `gleam`
 - LSPs that have to be installed with the package manager of the given language:
   - [LanguageServer.jl](https://github.com/julia-vscode/LanguageServer.jl) for julia
