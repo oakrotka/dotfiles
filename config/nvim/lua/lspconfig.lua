@@ -45,6 +45,9 @@ vim.lsp.config('rust_analyzer', {
         parameterHints = {
           enable = false
         },
+        typeHints = {
+          enable = false
+        },
       }
     }
   }
