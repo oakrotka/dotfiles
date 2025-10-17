@@ -8,5 +8,18 @@ return {
       'nvim-tree/nvim-web-devicons',
     }
     -- TODO key mappings and lazy loading
+  },
+
+  {
+    'romgrk/barbar.nvim',
+    version = '*',
+    lazy = false,
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    init = function() vim.g.barbar_auto_setup = false end,
+    opts = {
+      auto_hide = 1,
+      minimum_padding = 0,
+    },
+    -- TODO keymaps
   }
 }
