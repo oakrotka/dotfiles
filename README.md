@@ -1,4 +1,4 @@
-# krotkapliki
+# krotkapliki (eng. dotfiles)
 my dotfiles for arch linux.
 I plan on keeping this repo clean, so I will gradually add more of my dotfiles here when I'll be
 happy with them.

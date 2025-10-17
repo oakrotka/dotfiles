@@ -1,0 +1,4 @@
+#!/bin/sh
+# uwu cowsay
+# requires https://github.com/valadaptive/uwurandom
+uwurandom | head --bytes=${1:-100} | cowsay

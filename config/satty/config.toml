@@ -5,7 +5,7 @@ early-exit = true
 corner-roundness = 0
 initial-tool = "crop"
 copy-command = "screenshot -"
-# default-fill-shapes = false
+default-fill-shapes = true
 
 [font]
 family = "Noto"

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ $# '>' 1 ]; then
+  echo 'USAGE: checkwindow [WAIT_TIME]' 1>&2
+  exit 1
+elif [ $# = 1 ] && not [ "$1" -eq "$1" ] 2>/dev/null; then
+  [ "$1" != '--help' ] && echo 'Error: Invalid number' 1>&2
+  echo 'USAGE: checkwindow [WAIT_TIME]' 1>&2
+  exit 2
+fi
+
+wait_time="${1:-2}"
+wait() {
+  sleep $wait_time
+  [ $? = 0 ] || exit 3
+}
+
+case "$DESKTOP_SESSION" in
+  hyprland)
+    wait
+    hyprctl activewindow
+    ;;
+  *)
+    echo "Error: Window manager not recognised or unsupported." 1>&2
+    echo "Try setting the DESKTOP_SESSION enviroment variable." 1>&2
+    exit 3
+    ;;
+esac
