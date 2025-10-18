@@ -21,5 +21,16 @@ return {
       minimum_padding = 0,
     },
     -- TODO keymaps
-  }
+  },
+
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    opts = {},
+    -- this plugin advises against lazy loading, so disable it if anything goes wrong
+    keys = {
+	    { '<C-n>', '<cmd>NvimTreeToggle<cr>', desc = 'Filesystem tree' },
+    }
+  },
 }
