@@ -23,7 +23,7 @@ features that are stopping me from using this config (may be incomplete):
 - [x] autocompletion
 - [ ] neovim parameters
   - [ ] tab spacing
-  - [ ] usage of global clipboard buffer
+  - [x] usage of global clipboard buffer
 - [x] install the catppuccin theme
   - [ ] adjust the catppuccin theme to resemble the nvchad one more
 - [x] [telescope](https://github.com/nvim-telescope/telescope.nvim)
