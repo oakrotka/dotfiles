@@ -10,23 +10,26 @@ return {
   {
     -- syntax highlighting without an lsp
     'nvim-treesitter/nvim-treesitter',
-    event = {'BufReadPost', 'BufNewFile'},
-    cmd = {'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo'},
+    lazy = false,
     version = '*',
 
     branch = 'main',
     build = ':TSUpdate',
 
-    opts = {
-      ensure_installed = {'bash', 'fish', 'markdown', 'python', 'vim', 'vimdoc'},
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        -- TODO maybe change this if langs like julia/fish will still act weird
-        enable = true,
-      }
-    }
+    init = function ()
+      -- stupid boilerplate function to check whether we can enable treesitter for a buffer every
+      -- time we open one, because neovim or the treesitter plugin cannot figure out how to have
+      -- an option to autoload installed parsers and I cannot be bothered to write an autocmd for
+      -- every parser I install
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function ()
+          local lang = vim.treesitter.language
+          if lang.add(lang.get_lang(vim.bo.filetype)) then
+            vim.treesitter.start()
+          end
+        end
+      })
+    end,
   },
 
   {
