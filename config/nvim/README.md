@@ -26,7 +26,7 @@ features that are stopping me from using this config (may be incomplete):
   - [ ] usage of global clipboard buffer
 - [x] install the catppuccin theme
   - [ ] adjust the catppuccin theme to resemble the nvchad one more
-- [ ] [telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [x] [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [x] [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [ ] configure built-in terminals
 - [x] configure file buffers/tabs

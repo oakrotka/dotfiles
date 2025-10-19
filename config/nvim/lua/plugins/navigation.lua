@@ -6,8 +6,46 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'nvim-tree/nvim-web-devicons',
+    },
+    cmd = 'Telescope',
+
+    opts = {
+      defaults = {
+        layout_strategy = 'flex',
+        sorting_strategy = 'ascending',
+        layout_config = {
+          prompt_position = 'top',
+          flip_columns = 190,
+        },
+      },
+    },
+
+    keys = {
+      { '<leader>ff', '<cmd>Telescope find_files<cr>',  desc = 'Find files' },
+      { '<leader>fg', '<cmd>Telescope live_grep<cr>',   desc = 'Live grep' },
+      { '<leader>fh', '<cmd>Telescope man_pages<cr>',   desc = 'Search man pages' },
+      { '<leader>fc', '<cmd>Telescope git_commits<cr>', desc = 'Search git commits' },
+      { '<leader>fS', '<cmd>Telescope git_status<cr>',  desc = 'Search git status' },
+      { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<cr>',
+                                                        desc = 'Fuzzy search buffer' },
+      { '<leader>fs', function ()
+        local menu = require 'telescope.builtin'
+        local ts = vim.treesitter.language
+
+        if #vim.lsp.get_clients({bufnr = 0}) > 0 then
+          menu.lsp_document_symbols()
+        elseif ts.add(ts.get_lang(vim.bo.filetype)) then
+          menu.treesitter()
+        else
+          vim.notify(
+            'Could not find LSP server or treesitter parser to display document symbols.',
+            vim.log.levels.ERROR
+          )
+        end
+      end, desc = 'Search document symbols' },
+
+      -- TODO maybe replace lsp reference-implementation-definitions keymaps with telescope ones?
     }
-    -- TODO key mappings and lazy loading
   },
 
   {
