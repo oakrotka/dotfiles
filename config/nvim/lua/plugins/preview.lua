@@ -16,13 +16,7 @@ return {
     'chomosuke/typst-preview.nvim',
     version = '*',
     -- may be deleted when #88 merges
-    cmd = {
-      "TypstPreview",
-      "TypstPreviewToggle",
-      "TypstPreviewFollowCursor",
-      "TypstPreviewNoFollowCursor",
-      "TypstPreviewFollowCursorToggle",
-    },
+    cmd = { "TypstPreview", "TypstPreviewToggle" },
     opts = {
       -- assumes these binaries to be installed there
       dependencies_bin = {
