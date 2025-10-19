@@ -17,6 +17,9 @@ return {
 
     opts = {
       flavour = 'mocha',
+      integrations = {
+        barbar = true,
+      },
     }
   },
 
