@@ -31,7 +31,6 @@ features that are stopping me from using this config (may be incomplete):
 - [ ] configure built-in terminals
 - [x] configure file buffers/tabs
 - [ ] autopairs
-- [ ] easy commenting out lines
 - [ ] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [ ] inline diagnostics (I'll probably either want 
@@ -45,6 +44,7 @@ features that are not stopping me from using this config but I want to add them
 - [x] markdown preview
 - [ ] smart bracket surrounding
 - [ ] visible whitespace
+- [ ] nice ui for notifications
 - [ ] [discord presence](https://github.com/vyfor/cord.nvim) but minimal and only show filetypes
 - [ ] [git stuff](https://github.com/lewis6991/gitsigns.nvim)
 - [ ] [formatter](https://github.com/stevearc/conform.nvim)
