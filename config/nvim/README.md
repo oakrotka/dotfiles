@@ -30,7 +30,7 @@ features that are stopping me from using this config (may be incomplete):
 - [x] [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [ ] configure built-in terminals
 - [x] configure file buffers/tabs
-- [ ] autopairs
+- [x] autopairs
 - [ ] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [ ] inline diagnostics (I'll probably either want 
