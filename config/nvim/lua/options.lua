@@ -33,6 +33,9 @@ vim.opt.smartcase = true
 vim.opt.list = true
 vim.opt.listchars = "trail:•"  -- TODO visible tabs
 
+-- load globally installed parsers
+vim.opt.runtimepath:append({'/usr/lib/tree_sitter'})
+
 -- switch back to the beam cursor after shutdown
 -- - in the future, maybe figure out a way to autodetect the terminal's
 --   default cursor style? not sure if it's possible though

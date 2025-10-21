@@ -24,7 +24,16 @@ rsync
 rust-analyzer
 tar
 tinymist
+tree-sitter-bash
+tree-sitter-c
 tree-sitter-cli
+tree-sitter-javascript
+tree-sitter-lua
+tree-sitter-markdown
+tree-sitter-python
+tree-sitter-rust
+tree-sitter-vim
+tree-sitter-vimdoc
 typst
 util-linux
 websocat
