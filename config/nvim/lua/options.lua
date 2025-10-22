@@ -1,10 +1,6 @@
--- because nvim-tree has a skill issue
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- leader keys
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
@@ -31,10 +27,7 @@ vim.opt.smartcase = true
 
 -- whitespace presentation
 vim.opt.list = true
-vim.opt.listchars = "trail:•"  -- TODO visible tabs
-
--- load globally installed parsers
-vim.opt.runtimepath:append({'/usr/lib/tree_sitter'})
+vim.opt.listchars = 'trail:•'  -- TODO visible tabs
 
 -- switch back to the beam cursor after shutdown
 -- - in the future, maybe figure out a way to autodetect the terminal's
