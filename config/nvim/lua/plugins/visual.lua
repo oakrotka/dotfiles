@@ -12,7 +12,7 @@ return {
     -- show hex colors in files (e.g. #b852dd)
     'catgoose/nvim-colorizer.lua',
     version = '*',
-    lazy = false,
+    event = 'BufReadPre',
     opts = {
       user_default_options = {
         -- do not show colors for color names
