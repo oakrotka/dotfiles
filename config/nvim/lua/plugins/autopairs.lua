@@ -21,7 +21,7 @@ return {
   {
     -- automatic closing of xml-like tags
     'windwp/nvim-ts-autotag',
-    event = { 'BufReadPre', 'BufNewFile' },
+    lazy = false,
     config = true,
   }
 
