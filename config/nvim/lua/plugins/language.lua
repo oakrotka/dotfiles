@@ -64,12 +64,12 @@ return {
       keymap = {
         preset = 'none',
         -- select choice
-        ['<Tab>'] = {'select_and_accept', 'fallback'},
+        ['<Tab>'] = { 'select_and_accept', 'fallback' },
         -- move choice up/down
-        ['<C-p>'] = {'select_prev', 'fallback_to_mappings'},
-        ['<C-n>'] = {'select_next', 'fallback_to_mappings'},
+        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
         -- deselect
-        ['<C-e>'] = {'hide'},
+        ['<C-e>'] = { 'hide' },
         -- show/hide completion, signature, documentation
         ['<C-space>'] = {
           'show',
@@ -79,8 +79,8 @@ return {
           'hide_documentation'
         },
         -- scroll documentation
-        ['<C-u>'] = {'scroll_documentation_up', 'fallback'},
-        ['<C-d>'] = {'scroll_documentation_down', 'fallback'},
+        ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
       },
     },
   },
