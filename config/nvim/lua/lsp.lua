@@ -8,12 +8,12 @@ require "lspconfig"
 
 -- enable lsp servers (usually defined by nvim-lspconfig plugin)
 vim.lsp.enable {
-  "basedpyright",
-  "clangd",
-  "gleam",
-  "julials",
-  "lua_ls",
-  "ocamllsp",
-  "rust_analyzer",  -- consider switching to rustaceanvim for more features
-  "tinymist",
+  'basedpyright',
+  'clangd',
+  'gleam',
+  'julials',
+  'lua_ls',
+  'ocamllsp',
+  'rust_analyzer',  -- consider switching to rustaceanvim for more features
+  'tinymist',
 }

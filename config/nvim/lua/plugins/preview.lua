@@ -1,8 +1,8 @@
 -- plugins for previewing output of markup languages in the browser
 return {
   {
-    "iamcco/markdown-preview.nvim",
-    ft = "markdown",
+    'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
     -- this version of the config requires yarn,
     -- but if I were to ever uninstall it then it is also possible 
     -- to download a binary release
@@ -16,7 +16,7 @@ return {
     'chomosuke/typst-preview.nvim',
     version = '*',
     -- may be deleted when #88 merges
-    cmd = { "TypstPreview", "TypstPreviewToggle" },
+    cmd = { 'TypstPreview', 'TypstPreviewToggle' },
     opts = {
       -- assumes these binaries to be installed there
       dependencies_bin = {
