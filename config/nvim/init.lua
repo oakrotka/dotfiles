@@ -5,4 +5,5 @@ require "options"
 require "setup.lazy"
 
 -- Post plugin loading config
+require "mappings"
 require "lsp"
