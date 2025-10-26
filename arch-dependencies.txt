@@ -14,7 +14,7 @@ lua-language-server
 mpv
 neovim
 opam
-optipng
+oxipng
 pacman-contrib
 poppler
 procps-ng
