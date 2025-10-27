@@ -28,9 +28,3 @@ vim.opt.smartcase = true
 -- whitespace presentation
 vim.opt.list = true
 vim.opt.listchars = 'trail:•'  -- TODO visible tabs
-
--- switch back to the beam cursor after shutdown
--- - in the future, maybe figure out a way to autodetect the terminal's
---   default cursor style? not sure if it's possible though
--- - I also tried to get it to work after suspend but failed :(
-vim.api.nvim_create_autocmd('VimLeave', { command = 'set guicursor=a:ver1-blinkon1' })
