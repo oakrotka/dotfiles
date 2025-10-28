@@ -50,7 +50,7 @@ return {
 
   {
     'romgrk/barbar.nvim',
-    version = '*',
+    version = nil,  -- I don't think I'm getting a release for my bugfix soon :(
     -- I *could* technically set up an event that triggers the first time more than 2 buffers are
     -- opened, but is it worth it? hmm
     lazy = false,
