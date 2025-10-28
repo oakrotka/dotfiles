@@ -10,7 +10,7 @@ vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
--- I will probably want from spaces to switch to tabs someday
+-- I will probably want to switch from spaces to tabs someday
 vim.opt.expandtab = true
 
 -- columns
