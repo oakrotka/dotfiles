@@ -36,6 +36,7 @@ features that are stopping me from using this config (may be incomplete):
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [x] inline diagnostics 
   - [ ] prettier signs for diagnostics on the right
+- [ ] make the current line number 1 column less indented to the left (and maybe brighter?)
 - [x] DO NOT add that stupid mason plugin
 
 features that are not stopping me from using this config but I want to add them
