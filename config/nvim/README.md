@@ -34,9 +34,8 @@ features that are stopping me from using this config (may be incomplete):
 - [x] autopairs
 - [ ] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [ ] inline diagnostics (I'll probably either want 
-[this plugin](https://github.com/rachartier/tiny-inline-diagnostic.nvim) 
-or [that one](https://github.com/folke/trouble.nvim))
+- [x] inline diagnostics 
+  - [ ] prettier signs for diagnostics on the right
 - [x] DO NOT add that stupid mason plugin
 
 features that are not stopping me from using this config but I want to add them
@@ -57,4 +56,5 @@ features that are not stopping me from using this config but I want to add them
 - [ ] maybe a cool colorscheme picker
 - [ ] maybe [which-key](https://github.com/folke/which-key.nvim)
 - [ ] consider using [endwise](https://github.com/RRethy/nvim-treesitter-endwise)
+- [ ] check out [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [ ] snippets? idk if I need those

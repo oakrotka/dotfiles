@@ -10,13 +10,16 @@ vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
--- I will probably want from spaces to switch to tabs someday
+-- I will probably want to switch from spaces to tabs someday
 vim.opt.expandtab = true
 
--- ui
+-- columns
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'          -- make space for diagnostics to the left of line numbers
 vim.opt.colorcolumn = '101'
+
+-- ui
 vim.opt.splitbelow = true           -- open new vertical split bottom
 vim.opt.splitright = true           -- open new horizontal splits right
 vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
