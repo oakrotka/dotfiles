@@ -1,4 +1,4 @@
--- lsp-ish utilities for languages - highlighting, autocomplete, etc
+-- utilities for intelligent code analysis etc.
 return {
   {
     -- configs for language servers
@@ -45,7 +45,7 @@ return {
     -- https://github.com/rust-lang/rust/issues/44839
     -- https://github.com/rust-lang/rust/issues/63292
     --
-    -- build = "RUSTFLAGS=\"-C target-cpu=native\" cargo build --release",  -- uncomment this
+    -- build = "cargo build --release",  -- uncomment this
 
     opts = {
       -- minor TODO: make the theme prettier
