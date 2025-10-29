@@ -55,4 +55,12 @@ return {
       theme = 'fluoromachine',
     }
   },
+
+  {
+    'RRethy/base16-nvim',
+    -- tommorow night theme is really pretty but the plugin pollutes the colorscheme list too much
+    enabled = false,
+    event = 'VeryLazy',
+    priority = 0,
+  },
 }
