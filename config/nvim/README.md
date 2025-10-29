@@ -1,11 +1,4 @@
 # neovim configuration
-**Work In Progress!!**
-
-As of writing this, I am currently using a messy NvChad config.
-This is my attempt to obtain a configuration where I actually know
-what features do I have and what is going on under the hood.
-I will delete this paragraph when this config will become usable enough
-for me to switch to it (if I'll remember to).
 
 ## dependencies
 external dependencies of this config (idk the minimum versions):
@@ -17,7 +10,6 @@ external dependencies of this config (idk the minimum versions):
 - language servers specified in the [lsp.lua file](./lua/lsp.lua)
 
 ## roadmap
-features that are stopping me from using this config (may be incomplete):
 - [x] LSP config
 - [x] treesitter
 - [x] autocompletion
@@ -38,8 +30,6 @@ features that are stopping me from using this config (may be incomplete):
   - [ ] prettier signs for diagnostics on the right
 - [ ] make the current line number 1 column less indented to the left (and maybe brighter?)
 - [x] DO NOT add that stupid mason plugin
-
-features that are not stopping me from using this config but I want to add them
 - [x] hex code colors preview
 - [x] typst preview
 - [x] markdown preview
