@@ -16,6 +16,7 @@ external dependencies of this config (idk the minimum versions):
 - [ ] neovim parameters
   - [ ] tab spacing
   - [x] usage of global clipboard buffer
+  - [x] make the current line number 1 column less indented to the left (and maybe brighter?)
 - [x] install the catppuccin theme
   - [ ] adjust the catppuccin theme to resemble the nvchad one more
 - [x] [telescope](https://github.com/nvim-telescope/telescope.nvim)
@@ -27,8 +28,7 @@ external dependencies of this config (idk the minimum versions):
 - [ ] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [x] inline diagnostics 
-  - [ ] prettier signs for diagnostics on the right
-- [ ] make the current line number 1 column less indented to the left (and maybe brighter?)
+  - [ ] prettier signs for diagnostics on the left
 - [x] DO NOT add that stupid mason plugin
 - [x] hex code colors preview
 - [x] typst preview
