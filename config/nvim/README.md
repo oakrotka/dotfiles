@@ -28,7 +28,8 @@ features that are stopping me from using this config (may be incomplete):
   - [ ] adjust the catppuccin theme to resemble the nvchad one more
 - [x] [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [x] [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-- [ ] configure built-in terminals
+- [x] configure built-in terminals
+  - [ ] polish the configuration
 - [x] configure file buffers/tabs
 - [x] autopairs
 - [ ] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
