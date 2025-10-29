@@ -27,6 +27,7 @@ return {
     'maxmx03/fluoromachine.nvim',
     name = 'fluoromachine',
     event = 'VeryLazy',
+    priority = 0,
 
     opts = {
       theme = 'fluoromachine',
