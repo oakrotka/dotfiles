@@ -1,9 +1,4 @@
 local opt = vim.opt
-local g   = vim.g
-
--- leader keys
-g.mapleader = ' '
-g.maplocalleader = '\\'
 
 -- misc editor functionality
 opt.clipboard = 'unnamedplus'   -- use system clipboard
