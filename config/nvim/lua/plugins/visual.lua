@@ -9,6 +9,14 @@ return {
   },
 
   {
+    -- pretty line at the bottom
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    lazy = false,
+    opts = {},
+  },
+
+  {
     -- prettier colorcolumn to show suggested text width
     'lukas-reineke/virt-column.nvim',
     version = '*',
