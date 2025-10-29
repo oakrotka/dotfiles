@@ -88,6 +88,13 @@ return {
   {
     'rachartier/tiny-inline-diagnostic.nvim',
     event = 'VeryLazy',
-    opts = {},
-  }
+    opts = {
+      options = {
+        multiline = {
+          enabled = true,
+          tabstop = vim.opt.tabstop,
+        },
+      },
+    },
+  },
 }
