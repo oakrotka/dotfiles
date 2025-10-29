@@ -11,16 +11,25 @@ return {
     -- this is the main theme
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme catppuccin]])
+
+    init = function()
+      vim.cmd.colorscheme('catppuccin')
     end,
 
     opts = {
       flavour = 'mocha',
+
+      auto_integrations = true,
       integrations = {
-        barbar = true,
+        barbar = false,  -- it's SO ugly
       },
-    }
+
+      custom_highlights = function(colors)
+        return {
+          WinSeparator = { fg = colors.overlay0 },
+        }
+      end,
+    },
   },
 
   {
