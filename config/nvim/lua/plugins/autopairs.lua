@@ -21,7 +21,7 @@ return {
   {
     -- automatic closing of xml-like tags
     'windwp/nvim-ts-autotag',
-    lazy = false,
+    event = 'VeryLazy',
     config = true,
   }
 
