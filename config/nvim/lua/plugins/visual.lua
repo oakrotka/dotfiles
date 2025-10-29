@@ -9,6 +9,14 @@ return {
   },
 
   {
+    -- prettier colorcolumn to show suggested text width
+    'lukas-reineke/virt-column.nvim',
+    version = '*',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  {
     -- show hex colors in files (e.g. #b852dd)
     'catgoose/nvim-colorizer.lua',
     version = '*',
