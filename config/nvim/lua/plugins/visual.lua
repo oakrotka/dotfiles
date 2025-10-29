@@ -15,6 +15,8 @@ return {
     lazy = false,
     opts = {
       user_default_options = {
+        RGB = false,
+        RGBA = false,
         -- do not show colors for color names
         names = false,
         -- show color as a rectangle before the hex code
