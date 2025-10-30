@@ -1,13 +1,5 @@
 vim.lsp.inlay_hint.enable(true)
 
--- auto formatting on save (only for rust for now)
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.rs',
-  callback = function()
-     vim.lsp.buf.format()
-  end
-})
-
 vim.lsp.config('basedpyright', {
   settings = {
     basedpyright = {
