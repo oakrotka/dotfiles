@@ -8,6 +8,13 @@ return {
   },
 
   {
+    'lewis6991/gitsigns.nvim',
+    event = 'VeryLazy',
+    version = '*',
+    opts = {},
+  },
+
+  {
     -- show hex colors in files (e.g. #b852dd)
     'catgoose/nvim-colorizer.lua',
     version = '*',
