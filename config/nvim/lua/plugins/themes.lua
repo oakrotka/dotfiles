@@ -14,7 +14,8 @@ return {
     opts = {
       groups = {
         all = {
-          WinSeparator = { fg = 'palette.bg4' }
+          WinSeparator = { fg = 'palette.bg4' },
+          -- BufferCurrent = { bg = 'palette.bg1' },
         },
       },
     },
