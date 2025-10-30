@@ -38,7 +38,7 @@ external dependencies of this config (idk the minimum versions):
 - [ ] nice ui for notifications
 - [ ] [discord presence](https://github.com/vyfor/cord.nvim) but minimal and only show filetypes
 - [x] [git stuff](https://github.com/lewis6991/gitsigns.nvim)
-- [ ] [formatter](https://github.com/stevearc/conform.nvim)
+- [ ] ~~[formatter](https://github.com/stevearc/conform.nvim)~~
 - [x] visible limit of characters in a line
 - [ ] bracket pair coloring
 - [ ] maybe a pretty dashboard
