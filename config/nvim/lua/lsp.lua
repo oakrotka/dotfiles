@@ -12,6 +12,7 @@ vim.lsp.enable {
   'clangd',
   'gleam',
   'julials',
+  'jdtls',
   'lua_ls',
   'ocamllsp',
   'rust_analyzer',  -- consider switching to rustaceanvim for more features
