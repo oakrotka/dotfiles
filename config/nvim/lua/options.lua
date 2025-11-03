@@ -7,8 +7,7 @@ opt.undofile = true             -- persistent undo history between sessions
 
 -- tabs
 opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.shiftwidth = 0
 -- I will probably want to switch from spaces to tabs someday
 opt.expandtab = true
 
