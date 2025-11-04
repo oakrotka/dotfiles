@@ -32,5 +32,56 @@ return {
         virtualtext_inline = 'before',
       },
     },
+  },
+
+  {
+    -- discord status
+    'vyfor/cord.nvim',
+    version = '*',
+    build = ':Cord update build',
+    event = 'VeryLazy',
+
+    opts = function ()
+      local function editing_status(opts)
+        local action = opts.is_read_only and 'Browsing' or 'Editing'
+
+        local article = string.find(opts.filetype, '^[AEIOUaeiou]') and 'an' or 'a'
+        local filetype = string.find(opts.filetype, '^Cord\\.') and '' or (' ' .. opts.filetype)
+        local file_desc = article .. filetype
+
+        return string.format("%s %s file", action, file_desc)
+      end
+
+      return {
+        editor = {
+          tooltip = 'Neovim'
+        },
+        idle = {
+          show_status = false,
+        },
+        display = {
+          swap_icons = true,
+          flavor = 'accent',
+          theme = 'atom',
+        },
+
+        text = {
+          -- only show the filetype for privacy
+          workspace = '',
+          editing = editing_status,
+          viewing = editing_status,
+          plugin_manager = 'Managing plugins',
+
+          -- ignore too specific buffers
+          file_browser = true,
+          lsp = true,
+          notes = true,
+          test = true,
+          diagnostics = true,
+          terminal = true,
+          games = false,
+        },
+      }
+    end,
   }
 }
