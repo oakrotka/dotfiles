@@ -1,5 +1,3 @@
-vim.lsp.inlay_hint.enable(true)
-
 vim.lsp.config('basedpyright', {
   settings = {
     basedpyright = {
