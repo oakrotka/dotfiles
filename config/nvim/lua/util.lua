@@ -9,9 +9,20 @@ function M.open_terminal_split()
     return
   end
 
+  -- calculate window width for the terminal
+  local desired_code_width = 100
+  local min_term_size = 45
+  local wininfo = vim.fn.getwininfo(vim.fn.win_getid())[1]
+  local available_width = wininfo.width - wininfo.textoff - 1
+  local termwidth = (
+    (desired_code_width + min_term_size <= available_width)
+      and (available_width - desired_code_width)
+      or math.floor(available_width / 3)
+  )
+
   vim.api.nvim_open_win(buf, true, {
     split = 'right',
-    -- width: TODO open terminal width to make the current code always span 100 columns
+    width = termwidth,
   })
 
   local shell = vim.fn.jobstart(vim.o.shell, {

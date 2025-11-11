@@ -22,7 +22,7 @@ external dependencies of this config (idk the minimum versions):
 - [x] [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [x] [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - [x] configure built-in terminals
-  - [ ] polish the configuration
+  - [x] polish the configuration
 - [x] configure file buffers/tabs
 - [x] autopairs
 - [x] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
