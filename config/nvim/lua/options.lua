@@ -6,7 +6,7 @@ opt.mouse = 'a'                 -- allow the mouse to be used
 opt.undofile = true             -- persistent undo history between sessions
 
 -- tabs
-opt.tabstop = 2
+opt.tabstop = 4
 opt.shiftwidth = 0
 -- I will probably want to switch from spaces to tabs someday
 opt.expandtab = true
