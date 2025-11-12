@@ -4,10 +4,6 @@ vim.lsp.config('basedpyright', {
       analysis = {
         -- I disabled most of the typing stuff here as it's more annoying than useful in python
         typeCheckingMode = 'off',
-        inlayHints = {
-          variableTypes = false,
-          callArgumentNames = false,
-        }
       }
     }
   }
@@ -31,14 +27,6 @@ vim.lsp.config('rust_analyzer', {
       check = {
         command = 'clippy',
       },
-      inlayHints = {
-        parameterHints = {
-          enable = false
-        },
-        typeHints = {
-          enable = false
-        },
-      }
     }
   }
 })
