@@ -11,6 +11,13 @@ return {
   },
 
   {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  {
     -- FIXME: doesn't work
     'tpope/vim-endwise',
     event = 'InsertEnter',
@@ -24,6 +31,4 @@ return {
     event = 'VeryLazy',
     config = true,
   }
-
-  -- TODO: nvim-surround
 }
