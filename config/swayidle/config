@@ -1,0 +1,6 @@
+lock 'hyprlock'
+before-sleep 'loginctl lock-session'
+
+timeout 900 'light -O; light -S 0' resume 'light -I'
+timeout 910 'loginctl lock-session'
+idlehint 910
