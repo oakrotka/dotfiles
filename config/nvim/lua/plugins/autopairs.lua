@@ -5,9 +5,18 @@ return {
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
     opts = {
-      { '$', '$', ft = { 'typst', 'tex' }, space = true },
-      { '(*', '*)', ft = { 'ocaml' }, space = true },
+      { '$',   '$', ft = { 'typst', 'tex' },     space = true },
+      { '(*', '*)', ft = { 'ocaml' },            space = true },
+      { '/*', '*/', ft = { 'c', 'cpp', 'ispc' }, space = true },
+      { '/-', '-/', ft = { 'lean' },             space = true },
     }
+  },
+
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = "VeryLazy",
+    opts = {},
   },
 
   {
