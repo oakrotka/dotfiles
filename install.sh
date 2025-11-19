@@ -48,7 +48,8 @@ try_installfile() {
 
 ./typst/typst-install.sh ./typst/krommon "0.1.0"
 
-installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/satty
+installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/satty 
+installdir $HOME/.config ./config/swayidle/
 
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
 installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/strip-prefix

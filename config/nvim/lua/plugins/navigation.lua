@@ -79,7 +79,11 @@ return {
     'nvim-tree/nvim-tree.lua',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {},
+    opts = {
+        filters = {
+            git_ignored = false,
+        },
+    },
     -- this plugin advises against lazy loading, so disable it if anything goes wrong
     keys = {
       { '<C-n>', '<cmd>NvimTreeToggle<cr>', desc = 'File tree' },
