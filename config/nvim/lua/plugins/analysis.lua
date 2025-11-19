@@ -80,7 +80,7 @@ return {
         end
         -- map a key to all actions above for a textobject query
         local function fullmap(key, query)
-            smap2(key, query, 'textobject')
+            smap2(key, query, 'textobjects')
             mvmap(key, '@' .. query .. '.outer', query, 'textobjects')
         end
 
