@@ -8,7 +8,7 @@ return {
   },
 
   {
-    -- syntax highlighting without an lsp
+    -- syntax highlighting without an lsp, intelligent actions
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     version = '*',
@@ -31,6 +31,88 @@ return {
       })
     end,
   },
+
+  {
+    -- smart selection
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    event = 'VeryLazy',
+    version = '*',
+    branch = 'main',
+
+    config = function ()
+        local selection = require 'nvim-treesitter-textobjects.select'
+        local movement  = require 'nvim-treesitter-textobjects.move'
+        local mvmodes = { 'n', 'x', 'o' }
+
+        local map = vim.keymap.set
+        -- map a key to query selection
+        local function smap(keys, query, desc, group)
+            map({ 'x', 'o' }, keys, function ()
+                selection.select_textobject(query, group or 'textobjects')
+            end, {desc = 'Select ' .. desc})
+        end
+        -- map a key to inner and outer query selections
+        local function smap2(key, query, group)
+            smap('a' .. key, '@' .. query .. '.outer', 'outer ' .. query, group)
+            smap('i' .. key, '@' .. query .. '.inner', 'inner ' .. query, group)
+        end
+        -- map a key to query movement:
+        -- - ] and [ for next and previous, respectively
+        -- - optional `e` after bracket to go to the end of object instead of the start
+        local function mvmap(key, query, desc, group)
+            group = group or 'textobjects'
+
+            map(mvmodes, ']' .. key, function ()
+                movement.goto_next_start(query, group)
+            end, {desc = 'Go to next ' .. desc .. ' start'})
+
+            map(mvmodes, '[' .. key, function ()
+                movement.goto_previous_start(query, group)
+            end, {desc = 'Go to previous ' .. desc .. ' start'})
+
+            map(mvmodes, ']e' .. key, function ()
+                movement.goto_next_end(query, group)
+            end, {desc = 'Go to next ' .. desc .. ' end'})
+
+            map(mvmodes, '[e' .. key, function ()
+                movement.goto_previous_end(query, group)
+            end, {desc = 'Go to previous ' .. desc .. ' end'})
+        end
+        -- map a key to all actions above for a textobject query
+        local function fullmap(key, query)
+            smap2(key, query, 'textobject')
+            mvmap(key, '@' .. query .. '.outer', query, 'textobjects')
+        end
+
+        -- repeatable move
+        local mvrepeat = require "nvim-treesitter-textobjects.repeatable_move"
+        map(mvmodes, ";", mvrepeat.repeat_last_move)
+        map(mvmodes, ",", mvrepeat.repeat_last_move_opposite)
+        -- why do I even have to set this?
+        map(mvmodes, "f", mvrepeat.builtin_f_expr, { expr = true })
+        map(mvmodes, "F", mvrepeat.builtin_F_expr, { expr = true })
+        map(mvmodes, "t", mvrepeat.builtin_t_expr, { expr = true })
+        map(mvmodes, "T", mvrepeat.builtin_T_expr, { expr = true })
+
+        fullmap('f', 'function')
+        fullmap('P', 'parameter')
+        fullmap('c', 'class')
+        fullmap('r', 'return')
+
+        -- these queries like to be unpredictable
+        fullmap('F', 'call')  -- "[F]unction call"
+        fullmap('B', 'block')
+        fullmap('C', 'comment')
+        fullmap('i', 'conditional')  -- "[i]f statement" - in practice, a lot more compilcated
+        fullmap('l', 'loop')
+
+        smap('aS',  '@statement.outer', 'statement')
+        mvmap('S',  '@statement.outer', 'statement')
+        -- "[i]nside [a]ssignment's [<movement>]-hand side"
+        smap('iah', '@assignment.lhs',  'assignment lhs')
+        smap('ial', '@assignment.rhs',  'assignment rhs')
+    end
+  },  -- nvim-treesitter-textobjects
 
   {
     -- completion engine
