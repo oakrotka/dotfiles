@@ -98,13 +98,13 @@ return {
 
         fullmap('f', 'function')
         fullmap('P', 'parameter')
-        fullmap('c', 'class')
+        fullmap('t', 'class')  -- "[t]ype"
         fullmap('r', 'return')
 
         -- these queries like to be unpredictable
         fullmap('F', 'call')  -- "[F]unction call"
         fullmap('B', 'block')
-        fullmap('C', 'comment')
+        fullmap('c', 'comment')
         fullmap('i', 'conditional')  -- "[i]f statement" - in practice, a lot more compilcated
         fullmap('l', 'loop')
 
