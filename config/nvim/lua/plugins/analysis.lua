@@ -33,6 +33,19 @@ return {
   },
 
   {
+    -- view context of the current scope with treesitter
+    'nvim-treesitter/nvim-treesitter-context',
+    lazy = false,
+    opts = {
+      min_window_height = 20,
+      multiline_threshold = 7,
+      trim_scope = 'inner',
+      mode = 'topline',
+    }
+    -- TODO keybindings for toggling, jumping to context
+  },
+
+  {
     -- smart selection
     'nvim-treesitter/nvim-treesitter-textobjects',
     event = 'VeryLazy',
