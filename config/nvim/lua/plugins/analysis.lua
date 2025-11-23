@@ -16,7 +16,7 @@ return {
     branch = 'main',
     build = ':TSUpdate',
 
-    init = function ()
+    config = function ()
       -- stupid boilerplate function to check whether we can enable treesitter for a buffer every
       -- time we open one, because neovim or the treesitter plugin cannot figure out how to have
       -- an option to autoload installed parsers and I cannot be bothered to write an autocmd for
@@ -29,6 +29,8 @@ return {
           end
         end
       })
+
+      -- vim.opt.runtimepath:append({vim.fn.stdpath('data') .. '/helix-treesitter'})
     end,
   },
 
@@ -52,7 +54,7 @@ return {
     version = '*',
     branch = 'main',
 
-    config = function ()
+    opts = function ()
         local selection = require 'nvim-treesitter-textobjects.select'
         local movement  = require 'nvim-treesitter-textobjects.move'
         local mvmodes = { 'n', 'x', 'o' }
@@ -109,13 +111,13 @@ return {
 
         fullmap('f', 'function')
         fullmap('P', 'parameter')
-        fullmap('c', 'class')
+        fullmap('t', 'class')  -- "[t]ype"
         fullmap('r', 'return')
 
         -- these queries like to be unpredictable
         fullmap('F', 'call')  -- "[F]unction call"
         fullmap('B', 'block')
-        fullmap('C', 'comment')
+        fullmap('c', 'comment')
         fullmap('i', 'conditional')  -- "[i]f statement" - in practice, a lot more compilcated
         fullmap('l', 'loop')
 
@@ -124,6 +126,13 @@ return {
         -- "[i]nside [a]ssignment's [<movement>]-hand side"
         smap('iah', '@assignment.lhs',  'assignment lhs')
         smap('ial', '@assignment.rhs',  'assignment rhs')
+
+        return {
+            select = {
+                lookahead  = true,
+                lookbehind = true,
+            },
+        }
     end
   },  -- nvim-treesitter-textobjects
 

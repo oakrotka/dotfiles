@@ -10,9 +10,11 @@ require "lspconfig"
 vim.lsp.enable {
   'basedpyright',
   'clangd',
+  'elixirls',
+  'elp',
   'gleam',
-  'julials',
   'jdtls',
+  'julials',
   'lua_ls',
   'ocamllsp',
   'rust_analyzer',  -- consider switching to rustaceanvim for more features
