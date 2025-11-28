@@ -15,6 +15,23 @@ return {
   },
 
   {
+    'stevearc/conform.nvim',
+    version = '*',
+
+    keys = {
+      { '<A-f>', function ()
+        require('conform').format()
+      end, desc = 'Format selection/buffer' },
+    },
+
+    opts = {
+      formatters_by_ft = {
+        rust = { 'rustfmt', lsp_format = 'fallback' },
+      },
+    },
+  },
+
+  {
     -- show hex colors in files (e.g. #b852dd)
     'catgoose/nvim-colorizer.lua',
     version = '*',
@@ -83,5 +100,15 @@ return {
         },
       }
     end,
-  }
+  },
+
+  {
+    'Julian/lean.nvim',
+    ft = 'lean',
+    dependencies = 'nvim-lua/plenary.nvim',
+
+    opts = { -- see below for full configuration options
+      mappings = true,
+    },
+  },
 }
