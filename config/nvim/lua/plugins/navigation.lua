@@ -45,7 +45,12 @@ return {
         end
       end, desc = 'Search document symbols' },
 
-      -- TODO maybe replace lsp reference-implementation-definitions keymaps with telescope ones?
+      -- LSP pickers
+      { '<leader>fd', '<cmd>Telescope diagnostics<cr>',   desc = 'Browse diagnostics' },
+      { 'gri', '<cmd>Telescope lsp_implementations<cr>',  desc = 'LSP implementations' },
+      { 'grr', '<cmd>Telescope lsp_references<cr>',       desc = 'LSP references' },
+      { 'grt', '<cmd>Telescope lsp_type_definitions<cr>', desc = 'LSP type definitons' },
+      { 'gd',  '<cmd>Telescope lsp_definitions<cr>',      desc = 'Goto definition' },
     }
   },
 
