@@ -25,6 +25,7 @@ return {
       { '<leader>fg', '<cmd>Telescope live_grep<cr>',   desc = 'Live grep' },
       { '<leader>fh', '<cmd>Telescope help_tags<cr>',   desc = 'Search vim help' },
       { '<leader>fH', '<cmd>Telescope man_pages<cr>',   desc = 'Search man pages' },
+      { '<leader>fk', '<cmd>Telescope keymaps<cr>',     desc = 'Search keymappings' },
       { '<leader>fc', '<cmd>Telescope git_commits<cr>', desc = 'Search git commits' },
       { '<leader>fS', '<cmd>Telescope git_status<cr>',  desc = 'Search git status' },
       { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<cr>',
