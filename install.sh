@@ -52,6 +52,6 @@ installdir $HOME/.config ./config/fish ./config/nvim ./config/pythonrc ./config/
 installdir $HOME/.config ./config/swayidle/
 
 [ -d $HOME/.local/bin ] || mkdir $HOME/.local/bin/
-installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/strip-prefix
+installdir $HOME/.local/bin ./local/bin/screenshot ./local/bin/strip-prefix ./local/bin/uwusay
 installdir $HOME/.local/bin ./local/bin/pacdeps ./local/bin/:3 ./local/bin/checkwindow
 installdir $HOME/.local/bin ./local/bin/typsteval

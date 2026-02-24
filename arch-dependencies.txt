@@ -8,14 +8,15 @@ fish
 gcc
 git
 grim
+grim
 hyprlock
 lf
 libnotify
-light
 lua-language-server
 mpv
 neovim
 opam
+oxipng
 oxipng
 pacman-contrib
 poppler
@@ -24,6 +25,7 @@ python
 ripgrep
 rsync
 rust-analyzer
+slurp
 swayidle
 systemd
 tar
