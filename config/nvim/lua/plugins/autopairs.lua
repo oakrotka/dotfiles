@@ -4,11 +4,19 @@ return {
     -- I chose this plugin because it has a nicer way for configuring than nvim-autopairs
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
+
     opts = {
-      { '$',   '$', ft = { 'typst', 'tex' },     space = true },
-      { '(*', '*)', ft = { 'ocaml' },            space = true },
-      { '/*', '*/', ft = { 'c', 'cpp', 'ispc' }, space = true },
-      { '/-', '-/', ft = { 'lean' },             space = true },
+      { '*',     '*', ft = { 'markdown' }, },
+      { '**',   '**', ft = { 'markdown' }, },
+      { '_',     '_', ft = { 'markdown' }, },
+      { '__',   '__', ft = { 'markdown' }, },
+
+      { '```', '```', ft = { 'typst' },            newline = true },
+
+      { '$',     '$', ft = { 'typst', 'tex' },     space = true, newline = true },
+      { '/*',   '*/', ft = { 'c', 'cpp', 'ispc' }, space = true, newline = true },
+      { '(*',   '*)', ft = { 'ocaml' },            space = true, newline = true },
+      { '/-',   '-/', ft = { 'lean' },             space = true, newline = true },
     }
   },
 
