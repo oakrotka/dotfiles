@@ -10,6 +10,12 @@ opt.tabstop = 4
 opt.shiftwidth = 0
 -- I will probably want to switch from spaces to tabs someday
 opt.expandtab = true
+-- stupid options I have to set not to have stupid indentation on open parentheses
+opt.cinoptions = '(s,m1'  -- this still doesn't work for closing parentheses!
+vim.g.python_indent = {
+    open_paren = 'shiftwidth()',
+    closed_paren_align_last_line = false
+}
 
 -- columns
 opt.number = true               -- show the number column
