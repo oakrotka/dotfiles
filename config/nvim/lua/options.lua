@@ -32,4 +32,4 @@ opt.smartcase = true
 
 -- whitespace presentation
 opt.list = true
-opt.listchars = 'trail:•'  -- TODO visible tabs
+opt.listchars = 'trail:•,tab:> ,nbsp:+'  -- TODO visible tabs
