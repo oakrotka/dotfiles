@@ -11,6 +11,7 @@ return {
       { '_',     '_', ft = { 'markdown' }, },
       { '__',   '__', ft = { 'markdown' }, },
 
+      { '"""', '"""',                              newline = true },
       { '```', '```', ft = { 'typst' },            newline = true },
 
       { '$',     '$', ft = { 'typst', 'tex' },     space = true, newline = true },
