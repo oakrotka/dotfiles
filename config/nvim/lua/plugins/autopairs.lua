@@ -6,6 +6,17 @@ return {
     event = { 'InsertEnter', 'CmdlineEnter' },
 
     opts = {
+      tabout = {
+        enable = true,
+        hopout = true,
+        map = '<A-t>',
+        cmap = '<A-t>',
+      },
+
+      config_internal_pairs = {
+        { '<!--', '-->', ft = { 'html', 'markdown', 'svelte' }, newline = true },
+      },
+
       { '*',     '*', ft = { 'markdown' }, },
       { '**',   '**', ft = { 'markdown' }, },
       { '_',     '_', ft = { 'markdown' }, },
