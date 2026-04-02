@@ -16,6 +16,7 @@ vim.lsp.enable {
   'jdtls',
   'julials',
   'lua_ls',
+  'markdown_oxide',
   'ocamllsp',
   'rust_analyzer',  -- consider switching to rustaceanvim for more features
   'tinymist',
