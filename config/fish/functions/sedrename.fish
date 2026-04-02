@@ -3,7 +3,7 @@ function sedrename --description 'rename files according to a sed regex pattern'
   #
   # caveats: if a file was to be renamed to a name that occurs after it in the function arguments,
   # the second file will be overwritten and lost before its renaming could be performed.
-  # sadly, this is too difficult to be avoided in a shell script, but it's a behavior that's 
+  # sadly, this is too difficult to be avoided in a shell script, but it's a behavior that's
   # important to keep in mind.
   argparse --min-args=2 'm/move' -- $argv
     or return

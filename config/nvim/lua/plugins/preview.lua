@@ -4,7 +4,7 @@ return {
     'iamcco/markdown-preview.nvim',
     ft = 'markdown',
     -- this version of the config requires yarn,
-    -- but if I were to ever uninstall it then it is also possible 
+    -- but if I were to ever uninstall it then it is also possible
     -- to download a binary release
     build = "cd app && yarn install",
     init = function()

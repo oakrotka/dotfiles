@@ -5,7 +5,7 @@
   body
 ) = {
   set text(lang: "pl")
-  
+
   set text(font: "TeX Gyre Schola") if fancy-font
   // the rendering of this font is sometimes weird (particularily on firefox + linux),
   // so I may consider changing it in the future
@@ -29,6 +29,6 @@
 }
 
 #import "@preview/zero:0.4.0": num
-#import "@preview/oxifmt:1.0.0": strfmt 
+#import "@preview/oxifmt:1.0.0": strfmt
 // prettily show a number with a certain precision in a scientific form
 #let scient(f, prec: 3) = strfmt("{:." + str(prec) + "e}", f)

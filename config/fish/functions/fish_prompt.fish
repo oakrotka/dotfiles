@@ -23,7 +23,7 @@ function _catppuccin_prompt --argument-names last_status
       set_color red
       printf "[$last_status]"
     end) \
-    (set_color 45475a -b normal) 
+    (set_color 45475a -b normal)
 end
 
 function _ansi_prompt --argument-names last_status

@@ -6,14 +6,14 @@
 # if OPTION is -, read the image from stdin.
 script_name=screenshot
 
-# screenshot_fail STATUS REASON 
+# screenshot_fail STATUS REASON
 screenshot_fail() {
   notify-send 'Screenshotting failed' "$2"
   echo "Error: $2" 1>&2
   exit "$1"
 }
 
-# optimize_fail STATUS REASON 
+# optimize_fail STATUS REASON
 optimize_fail () {
   notify-send 'Optimisation failed' "$2"
   echo "Error: $2. The copied screenshot is unoptimized." 1>&2

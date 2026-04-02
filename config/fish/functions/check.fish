@@ -4,7 +4,7 @@ function check \
 
   argparse --max-args=1 -- $argv
     or return
-  
+
   # Default value is 2
   if test -z $wait_time
     set --function wait_time 2
@@ -14,7 +14,7 @@ function check \
     case hyprland
       sleep $wait_time
       hyprctl activewindow
-    case '*' 
+    case '*'
       echo "Error: Window manager not recognised or unsupported." 1>&2
       echo "Try setting the DESKTOP_SESSION enviroment variable." 1>&2
       return 1

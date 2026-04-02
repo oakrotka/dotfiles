@@ -27,7 +27,7 @@ external dependencies of this config (idk the minimum versions):
 - [x] autopairs
 - [x] [pretty bottom line](https://github.com/nvim-lualine/lualine.nvim)
 - [x] [pretty indents](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [x] inline diagnostics 
+- [x] inline diagnostics
   - [ ] prettier signs for diagnostics on the left
 - [x] DO NOT add that stupid mason plugin
 - [x] hex code colors preview
