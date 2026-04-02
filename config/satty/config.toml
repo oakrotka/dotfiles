@@ -1,6 +1,6 @@
 [general]
 fullscreen = true
-output-filename = "/home/rodia/.cache/satty/screenshots/test-%Y-%m-%d_%H:%M:%S.png"
+output-filename = "~/.cache/satty/screenshots/test-%Y-%m-%d_%H:%M:%S.png"
 early-exit = true
 corner-roundness = 0
 initial-tool = "crop"
