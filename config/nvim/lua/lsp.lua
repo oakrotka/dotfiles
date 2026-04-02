@@ -20,4 +20,10 @@ vim.lsp.enable {
   'ocamllsp',
   'rust_analyzer',  -- consider switching to rustaceanvim for more features
   'tinymist',
+
+  'html',
+  'cssls',
+  'ts_ls',
+  'svelte',
+  'tailwindcss',
 }
