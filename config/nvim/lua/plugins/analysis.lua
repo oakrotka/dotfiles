@@ -139,7 +139,7 @@ return {
   {
     -- completion engine
     'Saghen/blink.cmp',
-    event = 'InsertEnter',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     version = '*',
 
     -- TODO: switch to building binaries yourself instead of relying on binaries built by github
