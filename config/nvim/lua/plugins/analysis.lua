@@ -64,7 +64,7 @@ return {
         local function smap(keys, query, desc, group)
             map({ 'x', 'o' }, keys, function ()
                 selection.select_textobject(query, group or 'textobjects')
-            end, {desc = 'Select ' .. desc})
+            end, {desc = desc})
         end
         -- map a key to inner and outer query selections
         local function smap2(key, query, group)
@@ -79,19 +79,19 @@ return {
 
             map(mvmodes, ']' .. key, function ()
                 movement.goto_next_start(query, group)
-            end, {desc = 'Go to next ' .. desc .. ' start'})
+            end, {desc = 'next ' .. desc .. ' start'})
 
             map(mvmodes, '[' .. key, function ()
                 movement.goto_previous_start(query, group)
-            end, {desc = 'Go to previous ' .. desc .. ' start'})
+            end, {desc = 'previous ' .. desc .. ' start'})
 
             map(mvmodes, ']e' .. key, function ()
                 movement.goto_next_end(query, group)
-            end, {desc = 'Go to next ' .. desc .. ' end'})
+            end, {desc = 'next ' .. desc .. ' end'})
 
             map(mvmodes, '[e' .. key, function ()
                 movement.goto_previous_end(query, group)
-            end, {desc = 'Go to previous ' .. desc .. ' end'})
+            end, {desc = 'previous ' .. desc .. ' end'})
         end
         -- map a key to all actions above for a textobject query
         local function fullmap(key, query)
