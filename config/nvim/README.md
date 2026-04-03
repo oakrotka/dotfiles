@@ -35,7 +35,7 @@ external dependencies of this config (idk the minimum versions):
 - [x] markdown preview
 - [ ] smart bracket surrounding
 - [ ] visible whitespace
-- [ ] nice ui for notifications
+- [x] nice ui for notifications
 - [x] [discord presence](https://github.com/vyfor/cord.nvim) but minimal and only show filetypes
 - [x] [git stuff](https://github.com/lewis6991/gitsigns.nvim)
 - [ ] ~~[formatter](https://github.com/stevearc/conform.nvim)~~

@@ -23,4 +23,13 @@ return {
     event = 'VeryLazy',
     opts = {},
   },
+
+  {
+    'rcarriga/nvim-notify',
+    version = '*',
+    lazy = false,
+    config = function ()
+      vim.notify = require('notify')
+    end
+  },
 }

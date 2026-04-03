@@ -28,6 +28,7 @@ return {
       { '<leader>fk', '<cmd>Telescope keymaps<cr>',     desc = 'Search keymappings' },
       { '<leader>fc', '<cmd>Telescope git_commits<cr>', desc = 'Search git commits' },
       { '<leader>fS', '<cmd>Telescope git_status<cr>',  desc = 'Search git status' },
+      { '<leader>fn', '<cmd>Telescope notify<cr>',      desc = 'Notification history' },
       { '<leader>f/', '<cmd>Telescope current_buffer_fuzzy_find<cr>',
                                                         desc = 'Fuzzy search buffer' },
       { '<leader>fs', function ()
