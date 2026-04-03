@@ -32,4 +32,12 @@ return {
       vim.notify = require('notify')
     end
   },
+
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    lazy = false,
+    opts = {},
+  },
 }

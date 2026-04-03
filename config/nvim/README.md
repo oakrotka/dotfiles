@@ -44,7 +44,7 @@ external dependencies of this config (idk the minimum versions):
 - [ ] maybe a pretty dashboard
 - [ ] maybe make blink.cmp prettier
 - [ ] maybe a cool colorscheme picker
-- [ ] maybe [which-key](https://github.com/folke/which-key.nvim)
+- [x] maybe [which-key](https://github.com/folke/which-key.nvim)
 - [ ] consider using [endwise](https://github.com/RRethy/nvim-treesitter-endwise)
 - [ ] check out [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [ ] snippets? idk if I need those
