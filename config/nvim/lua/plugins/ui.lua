@@ -38,6 +38,11 @@ return {
     event = 'VeryLazy',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     lazy = false,
-    opts = {},
+    opts = {
+      delay = 1000,
+      win = {
+        height = { max = 10 },
+      },
+    },
   },
 }
