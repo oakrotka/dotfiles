@@ -9,6 +9,10 @@ vim.lsp.config('basedpyright', {
   }
 })
 
+vim.lsp.config('elixirls', {
+    cmd = { '/usr/bin/elixir-ls' },
+})
+
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
