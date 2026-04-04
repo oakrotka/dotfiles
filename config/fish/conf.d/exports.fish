@@ -1,3 +1,3 @@
 if status is-interactive
-  set -gx PYTHONSTARTUP $HOME/.config/pythonrc
+    set -gx PYTHONSTARTUP $HOME/.config/pythonrc
 end

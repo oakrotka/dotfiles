@@ -8,8 +8,8 @@
 # to be named 'lib.typ'
 
 if [ $# -ne 2 ]; then
-  echo "Error: Expected 2 arguments, got $# " 1>&2
-  exit 1
+    echo "Error: Expected 2 arguments, got $# " 1>&2
+    exit 1
 fi
 
 filename=$(basename $1)
@@ -17,29 +17,29 @@ filepath=$(realpath $1)
 version=$2
 
 if [ ! -d "$filepath" ]; then
-  echo "Error: $1 should be a directory." 1>&2
-  exit 2
+    echo "Error: $1 should be a directory." 1>&2
+    exit 2
 fi
 
 target_parent="$HOME/.local/share/typst/packages/local/$filename"
 target="$target_parent/$version"
 
 if [ ! -d "$target_parent" ]; then
-  mkdir -p $target_parent
-  if [ $? -ne 0 ]; then
-    echo "Error: Failed to create directory $target_parent" 1>&2
-    exit 3
-  fi
+    mkdir -p $target_parent
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create directory $target_parent" 1>&2
+        exit 3
+    fi
 fi
 
 if [ -e "$target" ]; then
-  echo "$1: overwriting $target" 1>&2
-  rm -r $target
+    echo "$1: overwriting $target" 1>&2
+    rm -r $target
 
-  if [ $? -ne 0 ]; then
-    echo "Error: Couldn't overwrite $target" 1>&2
-    exit 3
-  fi
+    if [ $? -ne 0 ]; then
+        echo "Error: Couldn't overwrite $target" 1>&2
+        exit 3
+    fi
 fi
 
 cp -r $filepath $target

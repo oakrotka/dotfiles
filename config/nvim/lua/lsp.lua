@@ -1,6 +1,6 @@
 -- option to disable language servers e.g. when they use too much memory
 if vim.env.NVIM_NOLSP ~= nil then
-  return
+    return
 end
 
 -- load custom lsp configurations
@@ -8,22 +8,22 @@ require "lspconfig"
 
 -- enable lsp servers (usually defined by nvim-lspconfig plugin)
 vim.lsp.enable {
-  'basedpyright',
-  'clangd',
-  'elixirls',
-  'elp',
-  'gleam',
-  'jdtls',
-  'julials',
-  'lua_ls',
-  'markdown_oxide',
-  'ocamllsp',
-  'rust_analyzer',  -- consider switching to rustaceanvim for more features
-  'tinymist',
+    'basedpyright',
+    'clangd',
+    'elixirls',
+    'elp',
+    'gleam',
+    'jdtls',
+    'julials',
+    'lua_ls',
+    'markdown_oxide',
+    'ocamllsp',
+    'rust_analyzer',  -- consider switching to rustaceanvim for more features
+    'tinymist',
 
-  'html',
-  'cssls',
-  'ts_ls',
-  'svelte',
-  'tailwindcss',
+    'html',
+    'cssls',
+    'ts_ls',
+    'svelte',
+    'tailwindcss',
 }

@@ -29,11 +29,11 @@ cat arch-dependencies.txt | sudo pacman -Syu --needed -
 
 as for the other dependencies:
 - packages in the AUR:
-  - `pfetch-rs` (you can use just pfetch instead)
-  - `gleam`
+    - `pfetch-rs` (you can use just pfetch instead)
+    - `gleam`
 - LSPs that have to be installed with the package manager of the given language:
-  - [LanguageServer.jl](https://github.com/julia-vscode/LanguageServer.jl) for julia
-  - [ocaml-lsp](https://github.com/ocaml/ocaml-lsp)
+    - [LanguageServer.jl](https://github.com/julia-vscode/LanguageServer.jl) for julia
+    - [ocaml-lsp](https://github.com/ocaml/ocaml-lsp)
 - [uwurandom](https://github.com/valadaptive/uwurandom) is required for the
 [uwusay](./config/fish/functions/uwusay.fish) fish function
 

@@ -8,16 +8,16 @@ script_name=screenshot
 
 # screenshot_fail STATUS REASON
 screenshot_fail() {
-  notify-send 'Screenshotting failed' "$2"
-  echo "Error: $2" 1>&2
-  exit "$1"
+    notify-send 'Screenshotting failed' "$2"
+    echo "Error: $2" 1>&2
+    exit "$1"
 }
 
 # optimize_fail STATUS REASON
 optimize_fail () {
-  notify-send 'Optimisation failed' "$2"
-  echo "Error: $2. The copied screenshot is unoptimized." 1>&2
-  exit "$1"
+    notify-send 'Optimisation failed' "$2"
+    echo "Error: $2. The copied screenshot is unoptimized." 1>&2
+    exit "$1"
 }
 
 # wayland display is required to copy the screenshot
@@ -26,28 +26,28 @@ optimize_fail () {
 # to prevent cpu spikes when, for example, spamming print screens for whatever reason,
 # kill all other instances of this script
 [ "$(basename "$0")" = "$script_name" ] \
-  && tokill=$(pidof -x "$0" -o $$) \
-  && kill $tokill $(pgrep -P $tokill)
+    && tokill=$(pidof -x "$0" -o $$) \
+    && kill $tokill $(pgrep -P $tokill)
 
 image=$(mktemp)
 
 # take the initial screenshot
 # we use minimal compression here, as we're going to better optimize the file anyways
 case "$*" in
-  'full')
-    grim -l 1 "$image"
-    ;;
-  'select')
-    region=$(slurp)
-    [ $? = 0 ] || screenshot_fail 2 'Screen region not selected.'
-    grim -l 1 -g "$region" "$image"
-    ;;
-  '-')
-    cp /dev/stdin "$image"
-    ;;
-  *)
-    screenshot_fail 3 'OPTION incorrect or not provided.'
-    ;;
+    'full')
+        grim -l 1 "$image"
+        ;;
+    'select')
+        region=$(slurp)
+        [ $? = 0 ] || screenshot_fail 2 'Screen region not selected.'
+        grim -l 1 -g "$region" "$image"
+        ;;
+    '-')
+        cp /dev/stdin "$image"
+        ;;
+    *)
+        screenshot_fail 3 'OPTION incorrect or not provided.'
+        ;;
 esac || screenshot_fail 4 'Could not obtain input image.'
 
 # oxipng can take some time, so we'll asynchronously copy this result for now
