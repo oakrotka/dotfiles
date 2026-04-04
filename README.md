@@ -39,14 +39,14 @@ as for the other dependencies:
 
 ## TODO
 - [x] fish
-- [ ] [make neovim usable](./config/nvim/README.md#roadmap)
+- [x] [make neovim usable](./config/nvim/README.md#roadmap)
 - [ ] hyprland and hypr* utils
 - [ ] figure out niri for my laptop
 - [ ] dunst OR switch to mako
-- [ ] kitty
+- [ ] ~kitty~
 - [ ] foot
 - [ ] waybar
 - [ ] mpv
-- [ ] tofi
+- [x] ~tofi~ fuzzel
 - [x] satty
 - [ ] lf
