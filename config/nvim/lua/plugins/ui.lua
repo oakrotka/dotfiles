@@ -37,7 +37,6 @@ return {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    lazy = false,
     opts = {
       delay = 1000,
       win = {
