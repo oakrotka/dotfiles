@@ -18,7 +18,7 @@ function sedrename --description 'rename files according to a sed regex pattern'
         echo "$f -> $new_name"
 
         set -q _flag_move
-        and mv $f $new_name
+        and mv -- $f $new_name
         or set -f mv_failure
     end
 
