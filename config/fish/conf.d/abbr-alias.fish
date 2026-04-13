@@ -3,6 +3,7 @@ if status is-interactive
     abbr --add ccp wl-copy
     abbr --add cpst wl-paste
     abbr --add gits git status
+    abbr --add gitds git diff --staged
     abbr --add glon git clone --depth 1  # useful for one-time repo browsing
     abbr --add orphans pacman -Qtdq
     abbr --add pacs sudo pacman
