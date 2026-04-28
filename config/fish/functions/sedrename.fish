@@ -14,16 +14,19 @@ function sedrename --description 'rename files according to a sed regex pattern'
     or return
 
     for f in $argv[2..-1]
-        set new_name (echo $f | sed -E $sed_pattern)
+        set new_basename (basename $f | sed -E $sed_pattern)
+        set new_name "$(dirname $f)/$new_basename"
         echo "$f -> $new_name"
 
-        set -q _flag_move
-        and mv -- $f $new_name
-        or set -f mv_failure
+        # don't move the file if its name would be unchanged
+        if set -q _flag_move; and test $(realpath $f) != $(realpath $new_name)
+            mv -- $f $new_name
+            or set -f mv_failure
+        end
     end
 
     if not set -q _flag_move
-        printf "\nWarning: --move has not been specified, no renaming was performed."
+        printf "\nWarning: --move has not been specified, no renaming was performed.\n"
         return 3
     end
 
